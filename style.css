@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: ivory;
+}
+
+table{
+    border-collapse: collapse;
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+}
+
+th {
+    background-color: #e0e0e0;
+}
+
+.subject {
+    font-weight: bold;
+}
+
+.practice {
+    background-color: #86EFAC;
+}
+
+.lecture {
+    background-color: #b5fd93;
+}
+
+.lab {
+    background-color: hsl(340, 100%, 74%);
+}
+
+@media (max-width: 768px) {
+    table, tr, td, th {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+
+
+
