@@ -30,15 +30,23 @@ th {
 }
 
 .practice {
-    background-color: #86EFAC;
+    background-color: #1982C4;
 }
 
 .lecture {
-    background-color: #b5fd93;
+    background-color: #8AC926;
 }
 
 .lab {
-    background-color: hsl(340, 100%, 74%);
+    background-color: #FF595E;
+}
+
+.seminar {
+    background-color: #FFCA3A;
+}
+
+.other {
+    background-color: #6A4C93;
 }
 
 @media (max-width: 768px) {
