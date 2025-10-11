@@ -1,13 +1,92 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: ivory;
+:root {
+    --bg: ivory;
+    --text: black;
+    --border: black;
+    --header-bg: #e0e0e0;
+
+    --practice-bg: #1982C4;
+    --lecture-bg: #8AC926;
+    --lab-bg: #FF595E;
+    --seminar-bg: #FFCA3A;
+    --other-bg: #6A4C93;
 }
 
-table{
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #e0e0e0;
+    --border: #e0e0e0;
+    --header-bg: #1f1f1f;
+
+    --practice-bg: var(--bg);
+    --lecture-bg: var(--bg);
+    --lab-bg: var(--bg);
+    --seminar-bg: var(--bg);
+    --other-bg: var(--bg);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-bottom: 1rem;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.theme-switch input:checked + .slider {
+    background-color: #4a90e2;
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+table {
     border-collapse: collapse;
     width: 60%;
     margin: 20px auto;
     text-align: center;
+    background-color: var(--bg);
+    color: var(--text)
 }
 
 caption {
@@ -17,12 +96,12 @@ caption {
 }
 
 th, td {
-    border: 2px solid black;
+    border: 2px solid var(--border);;
     padding: 8px;
 }
 
 th {
-    background-color: #e0e0e0;
+    background-color: var(--header-bg);
 }
 
 .subject {
@@ -30,31 +109,36 @@ th {
 }
 
 .practice {
-    background-color: #1982C4;
+    background-color: var(--practice-bg);
 }
 
 .lecture {
-    background-color: #8AC926;
+    background-color: var(--lecture-bg);
 }
 
 .lab {
-    background-color: #FF595E;
+    background-color: var(--lab-bg);
 }
 
 .seminar {
-    background-color: #FFCA3A;
+    background-color: var(--seminar-bg);
 }
 
 .other {
-    background-color: #6A4C93;
+    background-color: var(--other-bg);
 }
 
 @media (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+
     table, tr, td, th {
         font-size: 12px;
         padding: 4px;
     }
 }
+
 
 
 
